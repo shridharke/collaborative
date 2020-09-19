@@ -59,4 +59,9 @@ io.on('connection', socket => {
     })
 })
 
-server.listen(process.env.PORT || 3030);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3030;
+}
+
+server.listen(port);
